@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './css/App.css';
 import TodoList from './components/TodoList';
+import Header from './layout/Header';
 
 class App extends Component {
   state = { 
@@ -48,11 +49,13 @@ class App extends Component {
   render() { 
     return ( 
       <div className="app">
-
-        <TodoList todos= {this.state.todos}
-                  delTodo = {this.delTodo}
-                  handleMarkComplete={this.handleMarkComplete}
-        />
+          <div class="container">
+            <Header />
+            <TodoList todos= {this.state.todos}
+                      delTodo = {this.delTodo}
+                      handleMarkComplete={this.handleMarkComplete}
+            />
+            </div>
       </div>
      );
   }

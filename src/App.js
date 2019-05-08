@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './css/App.css';
 import TodoList from './components/TodoList';
-import Header from './layout/Header';
+import Header from './components/layout/Header';
 import Addtodo from './components/Addtodo';
+import About from './components/pages/About';
+import uuid from 'uuid';
 
 class App extends Component {
   state = { 
@@ -49,7 +52,17 @@ class App extends Component {
 
    //handleAddtodo
    handleAddtodo = (value) => {
-     console.log(value);
+
+    const newTodo = {
+      id:uuid.v4(),
+      title:value,
+      complited: false
+    }
+
+     this.setState({
+       todos:[...this.state.todos, newTodo]
+     })
+     
    }
 
   render() { 

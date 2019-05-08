@@ -67,16 +67,23 @@ class App extends Component {
 
   render() { 
     return ( 
-      <div className="app">
-          <div className="container">
-            <Header />
-            <Addtodo addtodo = {this.handleAddtodo}/>
-            <TodoList todos= {this.state.todos}
-                      delTodo = {this.delTodo}
-                      handleMarkComplete={this.handleMarkComplete}
-            />
-            </div>
-      </div>
+      <Router>
+        <div className="app">
+            <div className="container">
+                <Header />
+                <Route exact path="/" render= {props => (
+                <React.Fragment>
+                  <Addtodo addtodo = {this.handleAddtodo}/>
+                  <TodoList todos= {this.state.todos}
+                            delTodo = {this.delTodo}
+                            handleMarkComplete={this.handleMarkComplete}
+                  />
+                </React.Fragment>
+                )} />
+                <Route path="/about" component={About}/>
+              </div>
+        </div>
+      </Router>
      );
   }
 }

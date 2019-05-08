@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './css/App.css';
 import TodoList from './components/TodoList';
 import Header from './layout/Header';
+import Addtodo from './components/Addtodo';
 
 class App extends Component {
   state = { 
@@ -51,6 +52,7 @@ class App extends Component {
       <div className="app">
           <div class="container">
             <Header />
+            <Addtodo />
             <TodoList todos= {this.state.todos}
                       delTodo = {this.delTodo}
                       handleMarkComplete={this.handleMarkComplete}

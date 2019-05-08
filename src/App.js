@@ -8,7 +8,7 @@ class App extends Component {
         {
           'id': '1',
           'title': 'Posprzątać pokój',
-          'complited': true
+          'complited': false
         },
         {
           'id': '2',
@@ -23,13 +23,16 @@ class App extends Component {
       ]
    }
 
-   //deltodo method
+   //deltodo method, convey id from child component
+   //operator spread create copy new array todos and filter and assign todo.id !== id - DELETE todoitem!
+
    delTodo = (id) => {
-    console.log(id);
+     this.setState({todos: [...this.state.todos.filter(todo => todo.id !== id)]})
    }
 
+
    //handle mark complete?true:false
-   //create new array - method map
+   //create new array for help method map
    handleMarkComplete = (id) => {
      this.setState({
        todos: this.state.todos.map(todo => {

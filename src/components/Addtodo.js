@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
-import TodoItem from './TodoItem';
+
 
 class Addtodo extends Component {
   state = { 
     value: '',
    }
 
+   //on submit method
+   handleonsubmit = (e) => {
+      e.preventDefault();
+      this.props.addtodo(this.state.value);
+      this.setState({
+        value: ''
+      })
+   }
+
 
    //method handleInputChange
+   handleInputChange = (e) => {
+    this.setState({
+       value: e.target.value
+     })
+   }
+
 
   render() { 
     return ( 
       
-      <form style={{display: 'flex'}}>
+      <form onSubmit={this.handleonsubmit} style={{display: 'flex'}}>
         <input type="text"
                value={this.state.value}
                placeholder="Write todo..."

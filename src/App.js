@@ -47,12 +47,17 @@ class App extends Component {
      })
    }
 
+   //handleAddtodo
+   handleAddtodo = (value) => {
+     console.log(value);
+   }
+
   render() { 
     return ( 
       <div className="app">
-          <div class="container">
+          <div className="container">
             <Header />
-            <Addtodo />
+            <Addtodo addtodo = {this.handleAddtodo}/>
             <TodoList todos= {this.state.todos}
                       delTodo = {this.delTodo}
                       handleMarkComplete={this.handleMarkComplete}

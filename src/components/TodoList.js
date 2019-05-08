@@ -7,6 +7,7 @@ class TodoList extends Component {
       <TodoItem key={todo.id} 
                 todo={todo}
                 delTodo = {this.props.delTodo}
+                handleMarkComplete={this.props.handleMarkComplete}
                 />
     ))
   }

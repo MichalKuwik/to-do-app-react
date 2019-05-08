@@ -6,7 +6,7 @@ class TodoList extends Component {
     return this.props.todos.map((todo) => (
       <TodoItem key={todo.id} 
                 todo={todo}
-                
+                delTodo = {this.props.delTodo}
                 />
     ))
   }

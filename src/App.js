@@ -23,13 +23,18 @@ class App extends Component {
       ]
    }
 
+   //deltodo method
+   delTodo = (id) => {
+    console.log(id);
+   }
 
   render() { 
     return ( 
       <div className="app">
 
-        <TodoList todos= {this.state.todos}/>
-      
+        <TodoList todos= {this.state.todos}
+                  delTodo = {this.delTodo}
+        />
       </div>
      );
   }

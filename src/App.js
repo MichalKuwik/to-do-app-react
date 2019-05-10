@@ -10,21 +10,21 @@ import uuid from 'uuid';
 class App extends Component {
   state = { 
       todos: [
-        {
-          'id': '1',
-          'title': 'Posprzątać pokój',
-          'complited': false
-        },
-        {
-          'id': '2',
-          'title': 'Umyć okno',
-          'complited': false
-        },
-        {
-          'id': '3',
-          'title': 'Nakarmić kota',
-          'complited': false
-        }
+        // {
+        //   'id': '1',
+        //   'title': 'Posprzątać pokój',
+        //   'complited': false
+        // },
+        // {
+        //   'id': '2',
+        //   'title': 'Umyć okno',
+        //   'complited': false
+        // },
+        // {
+        //   'id': '3',
+        //   'title': 'Nakarmić kota',
+        //   'complited': false
+        // }
       ]
    }
 
